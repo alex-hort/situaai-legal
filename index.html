@@ -1,39 +1,239 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>SituaAI - Legal</title>
-    <style>
-      body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding: 2em;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      h1 {
-        color: #312e81;
-      }
-      a {
-        display: block;
-        padding: 1em;
-        margin: 0.5em 0;
-        background: #f5f5f5;
-        border-radius: 8px;
-        text-decoration: none;
-        color: #312e81;
-        font-weight: bold;
-      }
-      a:hover {
-        background: #e0e0e0;
-      }
-    </style>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>SituaAI — Practica conversaciones difíciles</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0B0814;
+      color: #E8E6F0;
+      min-height: 100vh;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1E1B4B, #312E81, #4338CA);
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .logo-circle {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 22px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 40px;
+    }
+    .hero h1 {
+      font-size: 42px; font-weight: 800;
+      color: #fff; margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 18px; color: rgba(255,255,255,0.75);
+      max-width: 480px; margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #312E81;
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.9; }
+
+    /* Features */
+    .features {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #E8E6F0;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: #171325;
+      border: 1px solid #261F3F;
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .feature-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #E8E6F0; }
+    .feature-card p { font-size: 14px; color: #9A92B5; line-height: 1.5; }
+
+    /* Situations */
+    .situations {
+      background: #120F1F;
+      padding: 60px 24px;
+    }
+    .situations-inner { max-width: 600px; margin: 0 auto; }
+    .situations h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .situation-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #1A1628;
+      border: 1px solid #261F3F;
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .situation-item .emoji { font-size: 28px; }
+    .situation-item .info h4 { font-size: 15px; font-weight: 600; color: #E8E6F0; }
+    .situation-item .info p { font-size: 13px; color: #9A92B5; margin-top: 2px; }
+
+    /* Legal */
+    .legal {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .legal h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+    .legal-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .legal-links a {
+      background: #171325;
+      border: 1px solid #261F3F;
+      color: #9B8FD4;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .legal-links a:hover { border-color: #534AB7; }
+
+    /* Footer */
+    footer {
+      background: #080612;
+      text-align: center;
+      padding: 32px 24px;
+      color: #4A4060;
+      font-size: 13px;
+      border-top: 1px solid #1A1628;
+    }
+    footer a { color: #6B5F88; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="logo-circle">🎭</div>
+    <div class="badge">Disponible en Android</div>
     <h1>SituaAI</h1>
-    <p>Legal documents for the SituaAI mobile application.</p>
-    <a href="privacy-policy.html">📄 Privacy Policy</a>
-    <a href="terms.html">📄 Terms & Conditions</a>
-    <p style="color: #999; font-size: 12px">Contact: horteespi16@gmail.com</p>
-  </body>
+    <p>Practica conversaciones difíciles con inteligencia artificial antes de vivirlas en la vida real.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.alexis.situaai">
+      Descargar gratis
+    </a>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <h2>¿Qué puedes practicar?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🎭</div>
+        <h3>Roleplay realista</h3>
+        <p>La IA juega el otro rol y reacciona como lo haría una persona real.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>Feedback inteligente</h3>
+        <p>Recibe análisis detallado de qué hiciste bien y qué mejorar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔥</div>
+        <h3>Gamificación</h3>
+        <p>Gana XP, sube de nivel y mantén tu racha diaria practicando.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Privado y seguro</h3>
+        <p>Tus conversaciones son privadas. Nunca compartimos tu información.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Situations -->
+  <div class="situations">
+    <div class="situations-inner">
+      <h2>Situaciones disponibles</h2>
+      <div class="situation-item">
+        <span class="emoji">💰</span>
+        <div class="info"><h4>Pedir aumento de sueldo</h4><p>Trabajo · Difícil · ~8 min</p></div>
+      </div>
+      <div class="situation-item">
+        <span class="emoji">💔</span>
+        <div class="info"><h4>Terminar una relación</h4><p>Pareja · Muy difícil · ~10 min</p></div>
+      </div>
+      <div class="situation-item">
+        <span class="emoji">👩‍👧</span>
+        <div class="info"><h4>Decirle algo difícil a mamá</h4><p>Familia · Medio · ~6 min</p></div>
+      </div>
+      <div class="situation-item">
+        <span class="emoji">😤</span>
+        <div class="info"><h4>Confrontar a un amigo</h4><p>Amigos · Medio · ~8 min</p></div>
+      </div>
+      <div class="situation-item">
+        <span class="emoji">🚪</span>
+        <div class="info"><h4>Presentar mi renuncia</h4><p>Trabajo · Muy difícil · ~10 min</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal -->
+  <div class="legal">
+    <h2>Información legal</h2>
+    <div class="legal-links">
+      <a href="privacy-policy.html">📄 Política de privacidad</a>
+      <a href="terms.html">📋 Términos de uso</a>
+      <a href="delete-account.html">🗑️ Eliminar cuenta</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 SituaAI · Desarrollado por Alexis Horteales · 
+    <a href="mailto:horteespi16@gmail.com">horteespi16@gmail.com</a></p>
+    <p style="margin-top:8px;">Tula de Allende, Hidalgo, México</p>
+  </footer>
+
+</body>
 </html>
